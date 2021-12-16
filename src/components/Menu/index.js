@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import { Heading3 } from '../../Typography'
 import { MenuContainer, CloseButtonContainer, InternalLinksContainer, ExternalLinksContainer, ExternalLink, InternalLink } from './style'
 
-export default function Menu({ toggleMenu }) {
+export default function Menu({ toggleMenu, menuActive }) {
 
     return (
-        <MenuContainer>
+        <MenuContainer menuActive={menuActive}>
             <CloseButtonContainer>
                 <button aria-label={'Close Menu'} onClick={toggleMenu}><Heading3>&times;</Heading3></button>
             </CloseButtonContainer>

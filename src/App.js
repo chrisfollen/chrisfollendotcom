@@ -1,6 +1,6 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 // import HeaderContainer from './components/HeaderContainer'
 import Home from './views/Home'
 import Header from './components/Header'
@@ -11,6 +11,7 @@ import Photo from './views/Photo'
 import About from './views/About'
 import NotFound from './views/404'
 import Menu from './components/Menu'
+import Preloader from './components/Preloader'
 // import Dev from './Dev'
 // import Photo from './Photo'
 // import About from './About'
@@ -26,7 +27,7 @@ function App() {
 
   const [menuActive, setMenuActive] = useState(false)
 //   const [linkHover, setLinkHover] = useState(false)
-//   const [preloading, setPreloading] = useState(true)
+  const [preloaderActive, setPreloaderActive] = useState(true)
 //   const [loading, setLoading] = useState(false)
 
 
@@ -37,11 +38,11 @@ function App() {
 //     addEventListeners()
 //   }, [currentLink])
 
-//   useEffect(() => {
-//     // setTimeout(() => setPreloading(false), 3500)
-//     addEventListeners()
-//     // updateLink(window.location.href)
-//   }, [])
+  useEffect(() => {
+    setTimeout(() => setPreloaderActive(false), 3500)
+    // addEventListeners()
+    // updateLink(window.location.href)
+  }, [])
 
 //   const updateLink = (path) => {
 //     setCurrentLink(path)
@@ -76,8 +77,9 @@ function App() {
         // <Cursor />
         <ThemeProvider theme={Theme}>
             <Router>
+                {preloaderActive && <Preloader/>}
                 <Header toggleMenu={toggleMenu}/>
-                {menuActive && <Menu toggleMenu={toggleMenu}/>}
+                <Menu menuActive={menuActive} toggleMenu={toggleMenu}/>
                 <Routes>
                     <Route path="/" exact element={<Home/>} />
                     <Route path="/dev" element={<Dev/>} />
