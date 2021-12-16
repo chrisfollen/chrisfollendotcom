@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Heading1 } from '../../Typography'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 export const HomeContainer = styled.div`
     position: fixed;
@@ -19,19 +19,48 @@ export const HomeContainer = styled.div`
 `
 
 export const TextContainer = styled.div`
-    padding-left: 40px;
-    padding-bottom: 40px;
+    padding-left: 2.5rem;
+    padding-bottom: 2rem;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+        padding-left: 2rem;
+        padding-bottom: 1.5rem;
+    }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        padding-left: 1rem;
+        padding-bottom: 1rem;
+    }
 `
 
-export const HomeHeading1 = styled(Heading1)`
+export const HomeHeading1 = styled(Heading1).attrs({ as: 'h2' })`
     letter-spacing: 0.9rem;
-    line-height: 7rem;
+    line-height: 8rem;
     color: ${({ theme }) => theme.palette.white};
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+        letter-spacing: 0.6rem;
+        line-height: 7rem;
+    }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        letter-spacing: 0.3rem;
+        line-height: 4rem;
+    }
 `
 
-export const HomeHeading1Link = styled(Link)`
-    letter-spacing: 0.9rem;
+export const HomeHeading1Link = styled.a`
     line-height: 7rem;
     color: ${({ theme }) => theme.palette.red};
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+        letter-spacing: 0.6rem;
+        line-height: 7rem;
+    }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        letter-spacing: 0.3rem;
+        line-height: 4rem;
+    }
 `
 
