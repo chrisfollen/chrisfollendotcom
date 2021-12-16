@@ -1,8 +1,9 @@
 import './App.css'
-// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import React from 'react'
 // import HeaderContainer from './components/HeaderContainer'
 import Home from './views/Home'
+import Header from './components/Header'
 import { Theme } from './Theme'
 import { ThemeProvider } from 'styled-components';
 // import Dev from './Dev'
@@ -69,10 +70,12 @@ function App() {
         // <Loader loadState={loading} />
         // <Cursor />
         <ThemeProvider theme={Theme}>
-        <div>
-            {/* <Heading1>hello, world!</Heading1> */}
-            <Home/>
-        </div>
+            <Router>
+                <Header/>
+                <Routes>
+                    <Route path="/" exact element={<Home/>} />
+                </Routes>
+            </Router>
         </ThemeProvider>
         // <HeaderContainer toggleMenu={toggleMenu} headerClass={headerClass} updateLink={updateLink} />
         // <Switch>
