@@ -6,7 +6,7 @@ export const HeaderContainer = styled.header`
     top: 0;
     left: 0;
     width: 100%;
-    height: 100px;
+    height: 6rem;
     display: flex;
     align-items: center;
     z-index: 1000;
@@ -25,17 +25,12 @@ export const HeaderWrapper = styled.div`
 
 
 export const HeaderText = styled(Heading4).attrs({ as: 'h1' })`
-    letter-spacing: 0.9rem;
-    line-height: 8rem;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-        letter-spacing: 0.6rem;
-        line-height: 7rem;
-    }
+    letter-spacing: 0.6rem;
+    line-height: 4rem;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
         letter-spacing: 0.3rem;
-        line-height: 4rem;
+        line-height: 2rem;
     }
 `
 

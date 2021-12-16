@@ -1,13 +1,10 @@
 import React from 'react'
-import { Heading2 } from '../../../../Typography'
+import { Heading3 } from '../../../../Typography'
 
-export default function MenuButton() {
+export default function MenuButton({ toggleMenu }) {
 
-    // const openMenu = () => {
-    //     props.toggleMenu()
-    // }
 
     return (
-        <button><Heading2>+</Heading2></button>
+        <button aria-label={'Menu'} onClick={toggleMenu}><Heading3>+</Heading3></button>
     );
 }

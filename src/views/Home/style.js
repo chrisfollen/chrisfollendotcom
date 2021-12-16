@@ -1,6 +1,6 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { Heading1 } from '../../Typography'
-// import { Link } from 'react-router-dom'
 
 export const HomeContainer = styled.div`
     position: fixed;
@@ -49,9 +49,9 @@ export const HomeHeading1 = styled(Heading1).attrs({ as: 'h2' })`
     }
 `
 
-export const HomeHeading1Link = styled.a`
+export const HomeHeading1Link = styled(Link)`
     line-height: 7rem;
-    color: ${({ theme }) => theme.palette.red};
+    color: ${({ theme }) => theme.palette.green};
 
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
         letter-spacing: 0.6rem;

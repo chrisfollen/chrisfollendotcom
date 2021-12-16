@@ -1,11 +1,16 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import React from 'react'
+import React, { useState } from 'react'
 // import HeaderContainer from './components/HeaderContainer'
 import Home from './views/Home'
 import Header from './components/Header'
 import { Theme } from './Theme'
 import { ThemeProvider } from 'styled-components';
+import Dev from './views/Dev'
+import Photo from './views/Photo'
+import About from './views/About'
+import NotFound from './views/404'
+import Menu from './components/Menu'
 // import Dev from './Dev'
 // import Photo from './Photo'
 // import About from './About'
@@ -19,7 +24,7 @@ import { ThemeProvider } from 'styled-components';
 
 function App() {
 
-//   const [menu, setMenu] = useState(false)
+  const [menuActive, setMenuActive] = useState(false)
 //   const [linkHover, setLinkHover] = useState(false)
 //   const [preloading, setPreloading] = useState(true)
 //   const [loading, setLoading] = useState(false)
@@ -42,13 +47,13 @@ function App() {
 //     setCurrentLink(path)
 //   }
 
-//   const toggleMenu = () => {
-//     if (menu) {
-//       setMenu(false)
-//     } else {
-//       setMenu(true)
-//     }
-//   }
+  const toggleMenu = () => {
+    if (menuActive) {
+      setMenuActive(false)
+    } else {
+      setMenuActive(true)
+    }
+  }
 
 //   const addEventListeners = () => {
 //     document.querySelectorAll('a, .clickable, .clickable-photo, .clickable-menu, .clickable-close').forEach((link) => {
@@ -71,9 +76,14 @@ function App() {
         // <Cursor />
         <ThemeProvider theme={Theme}>
             <Router>
-                <Header/>
+                <Header toggleMenu={toggleMenu}/>
+                {menuActive && <Menu toggleMenu={toggleMenu}/>}
                 <Routes>
                     <Route path="/" exact element={<Home/>} />
+                    <Route path="/dev" element={<Dev/>} />
+                    <Route path="/photo" exact element={<Photo/>} />
+                    <Route path="/about" exact element={<About/>} />
+                    <Route element={<NotFound/>} />
                 </Routes>
             </Router>
         </ThemeProvider>

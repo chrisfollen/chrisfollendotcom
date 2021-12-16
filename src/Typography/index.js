@@ -32,9 +32,19 @@ export const Heading2 = styled.h2`
     }
 `
 
+export const Heading3 = styled.h3`
+    ${heading};
+    font-size: 2.2rem;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        font-size: 1.8rem;
+    }
+`
+
 export const Heading4 = styled.h4`
     ${heading};
     font-size: 1.4rem;
+    letter-spacing: 2rem;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
         font-size: 0.9rem;
