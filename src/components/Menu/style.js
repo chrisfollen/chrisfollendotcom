@@ -75,6 +75,10 @@ export const ExternalLinksContainer = styled.div`
     }
 `
 
+export const CloseButton = styled.button.attrs({ ariaLabel: 'Close Menu' })`
+    color: ${({ theme }) => theme.palette.black};
+`
+
 export const InternalLinkBase = styled(Heading2)`
     letter-spacing: 0.9rem;
     padding-top: 2rem;

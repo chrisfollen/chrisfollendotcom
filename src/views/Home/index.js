@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import PropTypes from 'prop-types'
 import { HomeContainer, HomeHeading1, HomeHeading2, HomeHeading3, HomeHeadingLink, TextContainer } from './style';
 
 export default function Home({ homeAnimationHasRun, handlePageLoad }) {
@@ -16,4 +17,9 @@ export default function Home({ homeAnimationHasRun, handlePageLoad }) {
         </TextContainer>
     </HomeContainer>
   );
+}
+
+Home.propTypes = {
+  homeAnimationHasRun: PropTypes.bool.isRequired,
+  handlePageLoad: PropTypes.func.isRequired
 }

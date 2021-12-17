@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { Heading3 } from '../../Typography'
-import { MenuContainer, CloseButtonContainer, InternalLinksContainer, ExternalLinksContainer, ExternalLink, InternalLink1, InternalLink2, InternalLink3 } from './style'
+import { MenuContainer, CloseButtonContainer, InternalLinksContainer, ExternalLinksContainer, CloseButton, ExternalLink, InternalLink1, InternalLink2, InternalLink3 } from './style'
 
 export default function Menu({ toggleMenu, menuActive, handlePageLoad }) {
 
@@ -25,7 +26,7 @@ export default function Menu({ toggleMenu, menuActive, handlePageLoad }) {
     return (
         <MenuContainer menuActive={menuActive}>
             <CloseButtonContainer>
-                <button aria-label={'Close Menu'} onClick={toggleMenu}><Heading3>&times;</Heading3></button>
+                <CloseButton onClick={toggleMenu}><Heading3>&times;</Heading3></CloseButton>
             </CloseButtonContainer>
             <InternalLinksContainer>
                 <Link onClick={handleLinkClick} to='/dev'><InternalLink1 menuItemsVisable={menuItemsVisable} menuActive={menuActive}>dev</InternalLink1></Link>
@@ -42,4 +43,10 @@ export default function Menu({ toggleMenu, menuActive, handlePageLoad }) {
             </ExternalLinksContainer>
         </MenuContainer>
     )
+}
+
+Menu.propTypes = {
+    toggleMenu: PropTypes.func.isRequired,
+    menuActive: PropTypes.bool.isRequired,
+    handlePageLoad: PropTypes.func.isRequired,
 }
