@@ -47,7 +47,6 @@ export const CloseButtonContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    transition: color 0.3s linear;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
 
@@ -96,7 +95,7 @@ export const InternalLink1 = styled(InternalLinkBase)`
     opacity: ${({ menuItemsVisable }) => menuItemsVisable ? 1 : 0};
     animation: ${({ menuActive }) => menuActive &&
     css`
-        ${slideInLeft} .8s ease .4s
+        ${slideInLeft} .8s ease .3s
     `};
     animation-fill-mode: forwards; 
 `
@@ -105,7 +104,7 @@ export const InternalLink2 = styled(InternalLinkBase)`
     opacity: ${({ menuItemsVisable }) => menuItemsVisable ? 1 : 0};
     animation: ${({ menuActive }) => menuActive &&
     css`
-        ${slideInLeft} .8s ease .6s
+        ${slideInLeft} .8s ease .5s
     `};
     animation-fill-mode: forwards; 
 `
@@ -114,7 +113,7 @@ export const InternalLink3 = styled(InternalLinkBase)`
 opacity: ${({ menuItemsVisable }) => menuItemsVisable ? 1 : 0};
     animation: ${({ menuActive }) => menuActive &&
     css`
-        ${slideInLeft} .8s ease .8s
+        ${slideInLeft} .8s ease .7s
     `};
     animation-fill-mode: forwards; 
 `
@@ -126,7 +125,7 @@ export const ExternalLink = styled.img`
     opacity: ${({ menuItemsVisable }) => menuItemsVisable ? 1 : 0};
     animation: ${({ menuActive }) => menuActive &&
     css`
-        ${slideInUp} .8s ease 1s
+        ${slideInUp} .8s ease .9s
     `};
     animation-fill-mode: forwards;
 

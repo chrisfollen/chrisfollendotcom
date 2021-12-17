@@ -8,6 +8,6 @@ export const Theme = {
     },
     breakpoints : {
         sm: '900px',
-        md: '1400px'
+        md: '1300px'
     }
 }

@@ -13,45 +13,22 @@ import NotFound from './views/404'
 import Menu from './components/Menu'
 import Preloader from './components/Preloader'
 import { Loader } from './components/Loader/style'
-// import Dev from './Dev'
-// import Photo from './Photo'
-// import About from './About'
-// import Menu from './components/Menu'
-// import Cursor from './components/Cursor/'
-// import NotFound from './NotFound'
-// import Footer from './components/Footer'
-// import Preload from './components/Preload'
-// import Loader from './components/Loader'
-// import { updateCursor, hideCursor, showCursor} from './util/cursor'
+import Cursor from './components/Cursor'
+import { hideCursor, showCursor, addClickEventListeners, removeClickEventListeners } from './util'
 
 function App() {
 
   const [menuActive, setMenuActive] = useState(false)
-//   const [linkHover, setLinkHover] = useState(false)
+  const [linkHover, setLinkHover] = useState(false)
   const [preloaderActive, setPreloaderActive] = useState(true)
   const [homeAnimationHasRun, setHomeAnimationHasRun] = useState(false)
   const [loading, setLoading] = useState(false)
 
-
-//   useEffect(() => {
-//     setLoading(true)
-//     removeEventListeners()
-//     setTimeout(() => setLoading(false), 1800)
-//     addEventListeners()
-//   }, [currentLink])
-
   useEffect(() => {
     setTimeout(() => setPreloaderActive(false), 4500)
     setTimeout(() => setHomeAnimationHasRun(true), 12000)
-
-    // addEventListeners()
-    // updateLink(window.location.href)
+    addClickEventListeners(setLinkHover)
   }, [])
-
-//   const updateLink = (path) => {
-//     setCurrentLink(path)
-//   }
-
 
   const toggleMenu = () => {
     if (menuActive) {
@@ -62,33 +39,30 @@ function App() {
   }
 
   const handlePageLoad = () => {
+      removeClickEventListeners(setLinkHover)
       setLoading(true)
-      setTimeout(() => setLoading(false), 3000)
+      setTimeout(() => setLoading(false), 2500)
+      addClickEventListeners(setLinkHover)
   }
 
-//   const addEventListeners = () => {
-//     document.querySelectorAll('a, .clickable, .clickable-photo, .clickable-menu, .clickable-close').forEach((link) => {
-//       link.addEventListener('mouseover', () => setLinkHover(true))
-//       link.addEventListener('mouseout', () => setLinkHover(false))
-//     })
-//   }
-
-//   const removeEventListeners = () => {
-//     document.querySelectorAll('a, .clickable, .clickable-photo, .clickable-menu, .clickable-close').forEach((link) => {
-//       link.removeEventListener('mouseover', () => setLinkHover(true))
-//       link.removeEventListener('mouseout', () => setLinkHover(false))
-//     })
-//   }
+  const updateCursor = (event) => {
+    const cursor = document.querySelector(".cursor")
+    cursor.style.left = `${event.pageX}px`
+    cursor.style.top = `${event.pageY}px`
+    if(linkHover === true){
+      cursor.style.transform = 'scale(2) translate(-25%, -25%)'
+    } else {
+      cursor.style.transform = 'scale(1) translate(-50%, -50%)'
+    }
+  }
 
   return (
-    //   <div className="app" onMouseMove={updateCursor({linkHover: linkHover})} onScroll={updateCursor({linkHover: linkHover})} onMouseLeave={hideCursor} onMouseEnter={showCursor}>
-        // <Preload loadState={preloading}/>
-        // <Loader loadState={loading} />
-        // <Cursor />
         <ThemeProvider theme={Theme}>
             <Router>
+              <div onMouseMove={updateCursor} onScroll={updateCursor} onMouseLeave={hideCursor} onMouseEnter={showCursor}>
                 {preloaderActive && <Preloader/>}
                 {loading && <Loader/>}
+                <Cursor/>
                 <Header toggleMenu={toggleMenu} handlePageLoad={handlePageLoad}/>
                 <Menu menuActive={menuActive} toggleMenu={toggleMenu} handlePageLoad={handlePageLoad}/>
                 <Routes>
@@ -98,10 +72,9 @@ function App() {
                     <Route path="/about" exact element={<About/>} />
                     <Route element={<NotFound/>} />
                 </Routes>
+                </div>
             </Router>
         </ThemeProvider>
-    //   <Footer footerClass={footerClass}/>
-    // </div>
   );
 }
 

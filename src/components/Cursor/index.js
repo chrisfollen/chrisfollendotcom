@@ -1,9 +1,8 @@
 import React from 'react'
+import { StyledCursor } from './style'
 
 export default function Cursor() {
     return (
-        <div className = 'cursor'>
-            
-        </div>
+        <StyledCursor className='cursor' />
     )
 }
