@@ -11,6 +11,15 @@ const letterAnimation = keyframes`
     }
 `
 
+const fadeOut = keyframes`
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+`
+
 export const PreloaderContainer = styled.div`
     z-index: 300000;
     top: 0;
@@ -23,6 +32,7 @@ export const PreloaderContainer = styled.div`
     justify-content: center;
     transition: all 1s linear;
     background-color: ${({ theme }) => theme.palette.white};
+    animation: ${fadeOut} 1.5s ease 3s;
 `
 
 export const PreloadText = styled(Heading2)`

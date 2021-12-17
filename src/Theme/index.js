@@ -7,7 +7,7 @@ export const Theme = {
         grey: 'rgb(238, 238, 238)'
     },
     breakpoints : {
-        sm: '750px',
+        sm: '900px',
         md: '1400px'
     }
 }

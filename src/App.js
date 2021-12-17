@@ -12,6 +12,7 @@ import About from './views/About'
 import NotFound from './views/404'
 import Menu from './components/Menu'
 import Preloader from './components/Preloader'
+import { Loader } from './components/Loader/style'
 // import Dev from './Dev'
 // import Photo from './Photo'
 // import About from './About'
@@ -28,7 +29,8 @@ function App() {
   const [menuActive, setMenuActive] = useState(false)
 //   const [linkHover, setLinkHover] = useState(false)
   const [preloaderActive, setPreloaderActive] = useState(true)
-//   const [loading, setLoading] = useState(false)
+  const [homeAnimationHasRun, setHomeAnimationHasRun] = useState(false)
+  const [loading, setLoading] = useState(false)
 
 
 //   useEffect(() => {
@@ -39,7 +41,9 @@ function App() {
 //   }, [currentLink])
 
   useEffect(() => {
-    setTimeout(() => setPreloaderActive(false), 3500)
+    setTimeout(() => setPreloaderActive(false), 4500)
+    setTimeout(() => setHomeAnimationHasRun(true), 12000)
+
     // addEventListeners()
     // updateLink(window.location.href)
   }, [])
@@ -48,12 +52,18 @@ function App() {
 //     setCurrentLink(path)
 //   }
 
+
   const toggleMenu = () => {
     if (menuActive) {
       setMenuActive(false)
     } else {
       setMenuActive(true)
     }
+  }
+
+  const handlePageLoad = () => {
+      setLoading(true)
+      setTimeout(() => setLoading(false), 3000)
   }
 
 //   const addEventListeners = () => {
@@ -78,10 +88,11 @@ function App() {
         <ThemeProvider theme={Theme}>
             <Router>
                 {preloaderActive && <Preloader/>}
-                <Header toggleMenu={toggleMenu}/>
-                <Menu menuActive={menuActive} toggleMenu={toggleMenu}/>
+                {loading && <Loader/>}
+                <Header toggleMenu={toggleMenu} handlePageLoad={handlePageLoad}/>
+                <Menu menuActive={menuActive} toggleMenu={toggleMenu} handlePageLoad={handlePageLoad}/>
                 <Routes>
-                    <Route path="/" exact element={<Home/>} />
+                    <Route path="/" exact element={<Home homeAnimationHasRun={homeAnimationHasRun} handlePageLoad={handlePageLoad}/>} />
                     <Route path="/dev" element={<Dev/>} />
                     <Route path="/photo" exact element={<Photo/>} />
                     <Route path="/about" exact element={<About/>} />
@@ -89,15 +100,6 @@ function App() {
                 </Routes>
             </Router>
         </ThemeProvider>
-        // <HeaderContainer toggleMenu={toggleMenu} headerClass={headerClass} updateLink={updateLink} />
-        // <Switch>
-        //   <Route path="/" exact render={routerProps => <Home {...routerProps} updateLink={updateLink} />} /> */}
-        //   <Route path="/dev" component={Dev} />
-        //   <Route path="/photo" component={Photo} />
-        //   <Route path="/about" component={About} />
-        //   <Route render={routerProps => <NotFound {...routerProps} updateLink={updateLink} />} />
-        // </Switch>
-    //   <Menu currentClass={menuClass} toggleMenu={toggleMenu} updateLink={updateLink} />
     //   <Footer footerClass={footerClass}/>
     // </div>
   );

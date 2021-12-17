@@ -1,9 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Heading3 } from '../../Typography'
-import { MenuContainer, CloseButtonContainer, InternalLinksContainer, ExternalLinksContainer, ExternalLink, InternalLink } from './style'
+import { MenuContainer, CloseButtonContainer, InternalLinksContainer, ExternalLinksContainer, ExternalLink, InternalLink, InternalLink1 } from './style'
 
-export default function Menu({ toggleMenu, menuActive }) {
+export default function Menu({ toggleMenu, menuActive, handlePageLoad }) {
+
+    const handleLinkClick = () => {
+        toggleMenu();
+        handlePageLoad();
+    }
 
     return (
         <MenuContainer menuActive={menuActive}>
@@ -11,9 +16,9 @@ export default function Menu({ toggleMenu, menuActive }) {
                 <button aria-label={'Close Menu'} onClick={toggleMenu}><Heading3>&times;</Heading3></button>
             </CloseButtonContainer>
             <InternalLinksContainer>
-                <Link to='/dev'><InternalLink>dev</InternalLink></Link>
-                <Link to='/photo'><InternalLink>photo</InternalLink></Link>
-                <Link to='/about'><InternalLink>about</InternalLink></Link>
+                <Link onClick={handleLinkClick} to='/dev'><InternalLink1>dev</InternalLink1></Link>
+                <Link onClick={handleLinkClick} to='/photo'><InternalLink>photo</InternalLink></Link>
+                <Link onClick={handleLinkClick} to='/about'><InternalLink>about</InternalLink></Link>
             </InternalLinksContainer>
 
             <ExternalLinksContainer>

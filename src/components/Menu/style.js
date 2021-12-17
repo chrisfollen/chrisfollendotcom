@@ -69,6 +69,11 @@ export const InternalLink = styled(Heading2)`
     }
 `
 
+export const InternalLink1 = styled(InternalLink)`
+    color: ${({ theme }) => theme.palette.red}
+
+`
+
 export const ExternalLink = styled.img`
     width: 30px;
     height: 30px;

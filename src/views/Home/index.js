@@ -1,8 +1,7 @@
-// import { Link } from 'react-router-dom'
 import React, { useEffect } from 'react'
-import { HomeContainer, HomeHeading1, HomeHeading1Link, TextContainer } from './style';
+import { HomeContainer, HomeHeading1, HomeHeading2, HomeHeading3, HomeHeadingLink, TextContainer } from './style';
 
-export default function Home() {
+export default function Home({ homeAnimationHasRun, handlePageLoad }) {
 
   useEffect(() => {
     document.title = "CHRIS FOLLEN"
@@ -11,9 +10,9 @@ export default function Home() {
   return (
     <HomeContainer>
         <TextContainer>
-            <HomeHeading1>FRONTEND <HomeHeading1Link to='/dev'>DEV</HomeHeading1Link>ELOPER</HomeHeading1>
-            <HomeHeading1><HomeHeading1Link to='/photo'>PHOTO</HomeHeading1Link>GRAPHER</HomeHeading1>
-            <HomeHeading1>BASED IN COLO<HomeHeading1Link to='/about'>RAD</HomeHeading1Link>O</HomeHeading1>
+            <HomeHeading1 homeAnimationHasRun={homeAnimationHasRun}>FRONTEND <HomeHeadingLink onClick={()=> handlePageLoad()} to='/dev'>DEV</HomeHeadingLink>ELOPER</HomeHeading1>
+            <HomeHeading2 homeAnimationHasRun={homeAnimationHasRun}><HomeHeadingLink onClick={()=> handlePageLoad()} to='/photo'>PHOTO</HomeHeadingLink>GRAPHER</HomeHeading2>
+            <HomeHeading3 homeAnimationHasRun={homeAnimationHasRun}>BASED IN COLO<HomeHeadingLink onClick={()=> handlePageLoad()} to='/about'>RAD</HomeHeadingLink>O</HomeHeading3>
         </TextContainer>
     </HomeContainer>
   );
