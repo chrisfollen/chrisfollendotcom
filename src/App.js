@@ -42,7 +42,7 @@ function App() {
       removeClickEventListeners(setLinkHover)
       setLoading(true)
       setTimeout(() => setLoading(false), 2500)
-      addClickEventListeners(setLinkHover)
+      setTimeout(() => addClickEventListeners(setLinkHover), 2000)
   }
 
   const updateCursor = (event) => {
