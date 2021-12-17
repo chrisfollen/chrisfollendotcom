@@ -109,7 +109,7 @@ export const HomeHeading2 = styled(HomeHeadingBase)`
     opacity: ${({ homeAnimationHasRun }) => homeAnimationHasRun ? 1 : 0};
     animation: ${({ homeAnimationHasRun }) => !homeAnimationHasRun &&
     css`
-        ${slideIn} 3s ease 5s
+        ${slideIn} 3s ease 4s
     `};
     animation-fill-mode: forwards;
 };
@@ -117,7 +117,7 @@ export const HomeHeading2 = styled(HomeHeadingBase)`
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
         animation: ${({ homeAnimationHasRun }) => !homeAnimationHasRun &&
         css`
-            ${slideInSmall} 3s ease 5s
+            ${slideInSmall} 3s ease 4s
         `};
         animation-fill-mode: forwards;
     }
@@ -128,7 +128,7 @@ export const HomeHeading3 = styled(HomeHeadingBase)`
     color: ${({ theme }) => theme.palette.white};
     animation: ${({ homeAnimationHasRun }) => !homeAnimationHasRun &&
     css`
-        ${slideIn} 3s ease 7s
+        ${slideIn} 3s ease 5s
     `};
     animation-fill-mode: forwards;
 };
@@ -136,7 +136,7 @@ export const HomeHeading3 = styled(HomeHeadingBase)`
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
         animation: ${({ homeAnimationHasRun }) => !homeAnimationHasRun &&
         css`
-            ${slideInSmall} 3s ease 7s
+            ${slideInSmall} 3s ease 5s
         `};
         animation-fill-mode: forwards;
     }

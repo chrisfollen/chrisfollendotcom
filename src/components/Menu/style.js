@@ -1,5 +1,29 @@
-import styled from 'styled-components'
+import styled, { keyframes, css } from 'styled-components'
 import { Heading2 } from '../../Typography'
+
+const slideInLeft = keyframes `
+    from {
+      margin-left: -100%;
+      opacity: 0;
+    }
+  
+    to {
+      margin-left: 0%;
+      opacity: 1;
+    }
+  `
+
+  const slideInUp = keyframes `
+    from {
+      margin-bottom: -100%;
+      opacity: 0;
+    }
+  
+    to {
+      margin-bottom: 0%;
+      opacity: 1;
+    }
+  `
 
 export const MenuContainer = styled.nav`
     display: flex; 
@@ -52,11 +76,10 @@ export const ExternalLinksContainer = styled.div`
     }
 `
 
-export const InternalLink = styled(Heading2)`
+export const InternalLinkBase = styled(Heading2)`
     letter-spacing: 0.9rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    transition: color 0.3s linear;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
         letter-spacing: 0.6rem;
@@ -69,16 +92,43 @@ export const InternalLink = styled(Heading2)`
     }
 `
 
-export const InternalLink1 = styled(InternalLink)`
-    color: ${({ theme }) => theme.palette.red}
+export const InternalLink1 = styled(InternalLinkBase)`
+    opacity: ${({ menuItemsVisable }) => menuItemsVisable ? 1 : 0};
+    animation: ${({ menuActive }) => menuActive &&
+    css`
+        ${slideInLeft} .8s ease .4s
+    `};
+    animation-fill-mode: forwards; 
+`
 
+export const InternalLink2 = styled(InternalLinkBase)`
+    opacity: ${({ menuItemsVisable }) => menuItemsVisable ? 1 : 0};
+    animation: ${({ menuActive }) => menuActive &&
+    css`
+        ${slideInLeft} .8s ease .6s
+    `};
+    animation-fill-mode: forwards; 
+`
+
+export const InternalLink3 = styled(InternalLinkBase)`
+opacity: ${({ menuItemsVisable }) => menuItemsVisable ? 1 : 0};
+    animation: ${({ menuActive }) => menuActive &&
+    css`
+        ${slideInLeft} .8s ease .8s
+    `};
+    animation-fill-mode: forwards; 
 `
 
 export const ExternalLink = styled.img`
     width: 30px;
     height: 30px;
     padding: 12px;
-    transition: color 0.3s linear;
+    opacity: ${({ menuItemsVisable }) => menuItemsVisable ? 1 : 0};
+    animation: ${({ menuActive }) => menuActive &&
+    css`
+        ${slideInUp} .8s ease 1s
+    `};
+    animation-fill-mode: forwards;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
 
