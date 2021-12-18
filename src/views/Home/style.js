@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled, { keyframes, css } from 'styled-components'
-import { Heading1 } from '../../Typography'
+import { Heading1 } from '../../Typography/style'
 
 const slideIn = keyframes `
     from {

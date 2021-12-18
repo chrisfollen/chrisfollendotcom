@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react'
+import { InnerPageContainer } from '../../components/InnerPageContainer/style';
+import { OuterPageContainer } from '../../components/OuterPageContainer/style';
 
 export default function Dev() {
 
@@ -7,6 +9,12 @@ export default function Dev() {
  }, []);
 
   return (
-    <h1>DEV</h1>
+    <OuterPageContainer>
+      <InnerPageContainer>
+
+          <h1>DEV</h1>
+      </InnerPageContainer>
+    </OuterPageContainer>
+    
   );
 }

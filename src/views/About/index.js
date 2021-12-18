@@ -1,4 +1,7 @@
 import React, { useEffect } from 'react'
+import { InnerPageContainer } from '../../components/InnerPageContainer/style';
+import { OuterPageContainer } from '../../components/OuterPageContainer/style';
+import { CaroselContainer, HeroText, HeroTextContainer, PrimaryContentContainer, PrimaryContentTextContainer } from './style';
 
 export default function About() {
 
@@ -7,6 +10,21 @@ export default function About() {
  }, []);
 
   return (
-    <h1>ABOUT</h1>
+    <OuterPageContainer>
+    <InnerPageContainer>
+      <HeroTextContainer>
+        <HeroText>Hi there, I'm Chris!</HeroText>
+        <HeroText>Developer & photographer</HeroText>
+      </HeroTextContainer>
+      <PrimaryContentContainer>
+        <CaroselContainer>
+
+        </CaroselContainer>
+        <PrimaryContentTextContainer>
+          
+        </PrimaryContentTextContainer>
+      </PrimaryContentContainer>
+    </InnerPageContainer>
+  </OuterPageContainer>
   );
 }

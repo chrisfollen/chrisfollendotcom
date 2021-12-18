@@ -78,12 +78,3 @@ button:hover {
   cursor: pointer;
 }
 
-.cursor {
-  width: 3rem;
-  height: 3rem;
-  border: 2px solid  #DE5858;
-  border-radius: 50%;
-  position: absolute;
-  pointer-events: none;
-  z-index: 200000;
-}

@@ -23,7 +23,21 @@ export const Heading1 = styled.h1`
         font-size: 1.6rem;
     }
 `
+
 export const Heading2 = styled.h2`
+    ${heading};
+    font-size: 3.8rem;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+        font-size: 3.2rem;
+    }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        font-size: 1.2rem;
+    }
+`
+
+export const Heading3 = styled.h3`
     ${heading};
     font-size: 3rem;
 
@@ -32,7 +46,7 @@ export const Heading2 = styled.h2`
     }
 `
 
-export const Heading3 = styled.h3`
+export const Heading4 = styled.h4`
     ${heading};
     font-size: 2.2rem;
 
@@ -41,7 +55,7 @@ export const Heading3 = styled.h3`
     }
 `
 
-export const Heading4 = styled.h4`
+export const Heading5 = styled.h5`
     ${heading};
     font-size: 1.4rem;
     letter-spacing: 2rem;

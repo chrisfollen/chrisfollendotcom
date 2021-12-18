@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import { Heading3 } from '../../Typography/style'
+import { Heading2 } from '../../Typography/style'
 
 
 const letterAnimation = keyframes`
@@ -35,7 +35,7 @@ export const PreloaderContainer = styled.div`
     animation: ${fadeOut} 1.5s ease 3s;
 `
 
-export const PreloadText = styled(Heading3)`
+export const PreloadText = styled(Heading2)`
     color: ${({ theme }) => theme.palette.black};
     opacity: 0.8;
     letter-spacing: 0.6rem;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-import { Heading3 } from '../../Typography'
+import { Heading3 } from '../../Typography/style'
 import { MenuContainer, CloseButtonContainer, InternalLinksContainer, ExternalLinksContainer, CloseButton, ExternalLink, InternalLink1, InternalLink2, InternalLink3 } from './style'
 
 export default function Menu({ toggleMenu, menuActive, handlePageLoad }) {

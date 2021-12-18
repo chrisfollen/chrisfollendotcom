@@ -1,5 +1,5 @@
 import styled, { keyframes, css } from 'styled-components'
-import { Heading2 } from '../../Typography'
+import { Heading3 } from '../../Typography/style'
 
 const slideInLeft = keyframes `
     from {
@@ -79,7 +79,7 @@ export const CloseButton = styled.button.attrs({ ariaLabel: 'Close Menu' })`
     color: ${({ theme }) => theme.palette.black};
 `
 
-export const InternalLinkBase = styled(Heading2)`
+export const InternalLinkBase = styled(Heading3)`
     letter-spacing: 0.9rem;
     padding-top: 2rem;
     padding-bottom: 2rem;

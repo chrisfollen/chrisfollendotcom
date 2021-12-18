@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Heading4 } from '../../Typography'
+import { Heading5 } from '../../Typography/style'
 
 export const HeaderContainer = styled.header`
     position: fixed;
@@ -24,7 +24,7 @@ export const HeaderWrapper = styled.div`
 `
 
 
-export const HeaderText = styled(Heading4).attrs({ as: 'h1' })`
+export const HeaderText = styled(Heading5).attrs({ as: 'h1' })`
     letter-spacing: 0.6rem;
     line-height: 4rem;
 
