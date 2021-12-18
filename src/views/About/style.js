@@ -15,12 +15,12 @@ const slideInLeft = keyframes `
 
   const slideInRight = keyframes `
     from {
-      margin-left: 100%;
+      margin-right: -100%;
       opacity: 0;
     }
   
     to {
-      margin-left: 0%;
+      margin-right: 0%;
       opacity: 1;
     }
   `
@@ -79,20 +79,20 @@ export const HeroTextBase = styled(Heading2)`
 `
 
 export const HeroText1 = styled(HeroTextBase)`
-    animation: ${slideInDown} 3s ease-in 2s
+    animation: ${slideInDown} 3s ease 
     };
     animation-fill-mode: forwards;
 `
 
 export const HeroText2 = styled(HeroTextBase)`
-    animation: ${slideInDown} 3s ease-in 4s
+    animation: ${slideInDown} 3s ease 2s
     };
     animation-fill-mode: forwards;
 `
 
 export const HeroTextR = styled.div`
     display: inline-block;    
-    animation: ${rotateLetter} 1s ease-in 7s
+    animation: ${rotateLetter} 1s ease-in 5s
     };
     animation-fill-mode: forwards;
 `
@@ -114,8 +114,12 @@ export const CarouselContainer = styled.div`
     width: 48%;
     display: flex;
     margin: auto;
+    opacity: 0;
     align-items: center;
     justify-content: center;
+    animation: ${slideInLeft} 2s ease 6s
+    };
+    animation-fill-mode: forwards;
     @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
         width: 100%;
         margin-bottom: 32px;
@@ -127,6 +131,10 @@ export const PrimaryContentTextContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    opacity: 0;
+    animation: ${slideInRight} 2s ease 7s
+    };
+    animation-fill-mode: forwards;
     @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
         width: 100%;
     }
