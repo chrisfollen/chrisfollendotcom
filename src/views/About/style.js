@@ -164,6 +164,16 @@ export const PrimaryContentBodyText = styled(Body1)`
     }
 `
 
+export const QouteContainer = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 18rem;
+    margin-bottom: 18rem;
+`
+
 
 
 

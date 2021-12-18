@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import { InnerPageContainer } from '../../components/InnerPageContainer/style';
 import { OuterPageContainer } from '../../components/OuterPageContainer/style';
-import { CarouselContainer, HeroText1, HeroText2, HeroTextContainer, HeroTextR, PrimaryContentBodyText, PrimaryContentContainer, PrimaryContentHeadingText, PrimaryContentTextContainer, PrimaryContentTextInnerContainer } from './style';
+import { CarouselContainer, HeroText1, HeroText2, HeroTextContainer, HeroTextR, PrimaryContentBodyText, PrimaryContentContainer, PrimaryContentHeadingText, PrimaryContentTextContainer, PrimaryContentTextInnerContainer, QouteContainer } from './style';
 import PhotoCarousel from './components/PhotoCarosel';
+import { Quote1, Quote2 } from '../../Typography/style';
 
 export default function About() {
 
@@ -43,6 +44,10 @@ export default function About() {
           </PrimaryContentTextInnerContainer>
         </PrimaryContentTextContainer>
       </PrimaryContentContainer>
+      <QouteContainer>
+        <Quote1 style={{marginBottom: '1.6rem'}}>"Simplicity is the ultimate sophistication."</Quote1>
+        <Quote2>- Leonardo Da Vinci</Quote2>
+      </QouteContainer>
     </InnerPageContainer>
   </OuterPageContainer>
   );

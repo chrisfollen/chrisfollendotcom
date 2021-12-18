@@ -73,3 +73,25 @@ export const Body1 = styled.p`
         font-size: 1rem;
     }
 `
+
+export const Quote1 = styled.p`
+    ${base};
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        font-size: 1.2rem;
+        letter-spacing: 0.2rem;
+    }
+`
+
+export const Quote2 = styled.p`
+    ${base};
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        font-size: 0.8rem;
+        letter-spacing: 0.1rem;
+    }
+`
