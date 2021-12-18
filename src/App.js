@@ -1,7 +1,6 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
-// import HeaderContainer from './components/HeaderContainer'
 import Home from './views/Home'
 import Header from './components/Header'
 import { Theme } from './Theme'
@@ -23,12 +22,22 @@ function App() {
   const [preloaderActive, setPreloaderActive] = useState(true)
   const [homeAnimationHasRun, setHomeAnimationHasRun] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [isHomepage, setIsHomepage] = useState(true)
 
   useEffect(() => {
     setTimeout(() => setPreloaderActive(false), 4500)
     setTimeout(() => setHomeAnimationHasRun(true), 12000)
     addClickEventListeners(setLinkHover)
   }, [])
+
+  useEffect(() => {
+    if (window.location.href === ('http://localhost:3000/' || 'https://chrisfollen.com')) {
+      setIsHomepage(true)
+    } else {
+      setIsHomepage(false)
+    }
+      
+  }, [window.location.href])
 
   const toggleMenu = () => {
     if (menuActive) {
@@ -63,7 +72,7 @@ function App() {
                 {preloaderActive && <Preloader/>}
                 {loading && <Loader/>}
                 <Cursor/>
-                <Header toggleMenu={toggleMenu} handlePageLoad={handlePageLoad}/>
+                <Header toggleMenu={toggleMenu} handlePageLoad={handlePageLoad} isHomepage={isHomepage}/>
                 <Menu menuActive={menuActive} toggleMenu={toggleMenu} handlePageLoad={handlePageLoad}/>
                 <Routes>
                     <Route path="/" exact element={<Home homeAnimationHasRun={homeAnimationHasRun} handlePageLoad={handlePageLoad}/>} />

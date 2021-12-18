@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 export const base = css`
     font-family: 'Libre Caslon Text', serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     color: ${({ theme }) => theme.palette.black};
 `
 
@@ -33,7 +33,7 @@ export const Heading2 = styled.h2`
     }
 
     @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
     }
 `
 
@@ -51,7 +51,7 @@ export const Heading4 = styled.h4`
     font-size: 2.2rem;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
     }
 `
 
@@ -62,5 +62,14 @@ export const Heading5 = styled.h5`
 
     @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
         font-size: 0.9rem;
+    }
+`
+
+export const Body1 = styled.p`
+    ${base};
+    font-size: 1.4rem;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        font-size: 1rem;
     }
 `

@@ -99,7 +99,7 @@ export const InternalLink1 = styled(InternalLinkBase)`
     opacity: ${({ menuItemsVisable }) => menuItemsVisable ? 1 : 0};
     animation: ${({ menuActive }) => menuActive &&
     css`
-        ${slideInLeft} .8s ease .3s
+        ${slideInLeft} .8s ease-in .3s
     `};
     animation-fill-mode: forwards; 
 `
@@ -108,7 +108,7 @@ export const InternalLink2 = styled(InternalLinkBase)`
     opacity: ${({ menuItemsVisable }) => menuItemsVisable ? 1 : 0};
     animation: ${({ menuActive }) => menuActive &&
     css`
-        ${slideInLeft} .8s ease .5s
+        ${slideInLeft} .8s ease-in .5s
     `};
     animation-fill-mode: forwards; 
 `
@@ -117,7 +117,7 @@ export const InternalLink3 = styled(InternalLinkBase)`
 opacity: ${({ menuItemsVisable }) => menuItemsVisable ? 1 : 0};
     animation: ${({ menuActive }) => menuActive &&
     css`
-        ${slideInLeft} .8s ease .7s
+        ${slideInLeft} .8s ease-in .7s
     `};
     animation-fill-mode: forwards; 
 `
@@ -129,7 +129,7 @@ export const ExternalLink = styled.img`
     opacity: ${({ menuItemsVisable }) => menuItemsVisable ? 1 : 0};
     animation: ${({ menuActive }) => menuActive &&
     css`
-        ${slideInUp} .8s ease .9s
+        ${slideInUp} .8s ease-in .9s
     `};
     animation-fill-mode: forwards;
 

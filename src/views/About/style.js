@@ -1,22 +1,70 @@
-import styled from 'styled-components'
-import { Heading2 } from '../../Typography/style'
+import styled, { keyframes } from 'styled-components'
+import { Body1, Heading2, Heading4 } from '../../Typography/style'
+
+const slideInLeft = keyframes `
+    from {
+      margin-left: -100%;
+      opacity: 0;
+    }
+  
+    to {
+      margin-left: 0%;
+      opacity: 1;
+    }
+  `
+
+  const slideInRight = keyframes `
+    from {
+      margin-left: 100%;
+      opacity: 0;
+    }
+  
+    to {
+      margin-left: 0%;
+      opacity: 1;
+    }
+  `
+
+  const slideInDown = keyframes `
+    from {
+      margin-top: -100%;
+      opacity: 0;
+    }
+  
+    to {
+      margin-top: 0%;
+      opacity: 1;
+    }
+  `
+
+  const rotateLetter = keyframes `
+  from {
+    transform: rotate(0deg) translateY(0) translateX(0)
+  }
+
+  to {
+    transform: rotate(45deg) translateY(.8rem) translateX(.8rem)
+  }
+`
 
 export const HeroTextContainer = styled.div`
-    padding-bottom: 100px;
     display: flex;
     flex-direction: column;
     width: auto;
     margin: auto;
+    margin-bottom: 100px;
+    min-height: 400px
 
     @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-        padding-bottom: 600px;
+        margin-bottom: 60px;
+        min-height: 80px;
     }
 `
 
-export const HeroText = styled(Heading2)`
+export const HeroTextBase = styled(Heading2)`
     letter-spacing: 0.7rem;
     line-height: 6rem;
-
+    opacity: 0;
     color: ${({ theme }) => theme.palette.black};
 
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
@@ -30,35 +78,82 @@ export const HeroText = styled(Heading2)`
     }
 `
 
+export const HeroText1 = styled(HeroTextBase)`
+    animation: ${slideInDown} 3s ease-in 2s
+    };
+    animation-fill-mode: forwards;
+`
+
+export const HeroText2 = styled(HeroTextBase)`
+    animation: ${slideInDown} 3s ease-in 4s
+    };
+    animation-fill-mode: forwards;
+`
+
+export const HeroTextR = styled.div`
+    display: inline-block;    
+    animation: ${rotateLetter} 1s ease-in 7s
+    };
+    animation-fill-mode: forwards;
+`
+
 export const PrimaryContentContainer = styled.div`
-    padding-bottom: 40px;
     display: flex;
     flex-direction: row;
     width: 100%;
     height: auto;
+    min-height: 500px;
     margin: auto;
+    margin-bottom: 100px;
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        flex-direction: column;
+    }
 `
 
-export const CaroselContainer = styled.div`
+export const CarouselContainer = styled.div`
     width: 48%;
-    height: 200px;
     display: flex;
-    position: relative;
     margin: auto;
     align-items: center;
     justify-content: center;
-    background-color: ${({ theme }) => theme.palette.green}
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        width: 100%;
+        margin-bottom: 32px;
+    }
 `
 
 export const PrimaryContentTextContainer = styled.div`
     width: 48%;
-    height: 200px;
     display: flex;
-    position: relative;
-    margin: auto;
-    align-items: center;
-    justify-content: center;
-    background-color: ${({ theme }) => theme.palette.red}
+    flex-direction: column;
+    justify-content: space-around;
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        width: 100%;
+    }
+`
+
+export const PrimaryContentTextInnerContainer = styled.div`
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+`
+
+export const PrimaryContentHeadingText = styled(Heading4)`
+    color: ${({ theme }) => theme.palette.green};
+    line-height: 3rem;
+    letter-spacing: 0.2rem;
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        line-height: 2rem;
+    }
+`
+
+export const PrimaryContentBodyText = styled(Body1)`
+    line-height: 2rem;
+    letter-spacing: 0.1rem;
+    padding-bottom: 1.5rem;
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        line-height: 1.4rem;
+        padding-bottom: 1rem;
+    }
 `
 
 

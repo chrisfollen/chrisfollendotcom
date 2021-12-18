@@ -4,10 +4,10 @@ import MenuButton from './components/MenuButton'
 import { Link } from 'react-router-dom'
 import { HeaderContainer, HeaderText, HeaderWrapper, HeaderMenuContainer } from './style'
 
-export default function Header({ toggleMenu, handlePageLoad }) {
+export default function Header({ toggleMenu, handlePageLoad, isHomepage }) {
 
     return (
-        <HeaderContainer>
+        <HeaderContainer isHomepage={isHomepage}>
             <HeaderWrapper>
                 <HeaderText>
                     <Link onClick={()=> handlePageLoad()} to='/'>CHRIS FOLLEN</Link>
@@ -22,5 +22,6 @@ export default function Header({ toggleMenu, handlePageLoad }) {
 
 Header.propTypes = {
     toggleMenu: PropTypes.func.isRequired,
-    handlePageLoad: PropTypes.func.isRequired
+    handlePageLoad: PropTypes.func.isRequired,
+    isHomepage: PropTypes.bool.isRequired
 }

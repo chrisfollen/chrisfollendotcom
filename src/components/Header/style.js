@@ -10,6 +10,7 @@ export const HeaderContainer = styled.header`
     display: flex;
     align-items: center;
     z-index: 1000;
+    background-color: ${({ isHomepage, theme }) => isHomepage ? 'none' : theme.palette.white} }
 `
 
 export const HeaderWrapper = styled.div`
