@@ -36,7 +36,6 @@ function App() {
     } else {
       setIsHomepage(false)
     }
-      
   }, [window.location.href])
 
   const toggleMenu = () => {

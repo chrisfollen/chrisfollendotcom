@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { InnerPageContainer } from '../../components/InnerPageContainer/style';
 import { OuterPageContainer } from '../../components/OuterPageContainer/style';
-import { CarouselContainer, HeroText1, HeroText2, HeroTextContainer, HeroTextR, PrimaryContentBodyText, PrimaryContentContainer, PrimaryContentHeadingText, PrimaryContentTextContainer, PrimaryContentTextInnerContainer, QouteContainer } from './style';
+import { CarouselContainer, HeroText1, HeroText2, HeroTextContainer, HeroTextR, PrimaryContentBodyText, PrimaryContentContainer, PrimaryContentHeadingText, PrimaryContentTextContainer, PrimaryContentTextInnerContainer, QuoteContainer, ContactContainer, ContactText, ContactHeading, ContactHeadingContainer, StyledLink, LinksContainer, ExternalLink } from './style';
 import PhotoCarousel from './components/PhotoCarosel';
 import { Quote1, Quote2 } from '../../Typography/style';
+import Footer from '../../components/Footer';
 
 export default function About() {
 
@@ -25,10 +26,10 @@ export default function About() {
         <PrimaryContentTextContainer>
           <PrimaryContentTextInnerContainer>
             <PrimaryContentHeadingText>
-              Stoicism. Bikes. Architecture.
+              Stoicism. Bikes. Woodworking.
             </PrimaryContentHeadingText>
             <PrimaryContentHeadingText>
-              Woodworking. Tattoos. Rioja.
+            Architecture. Tattoos. Rioja.
             </PrimaryContentHeadingText>
           </PrimaryContentTextInnerContainer>
           <PrimaryContentTextInnerContainer>
@@ -44,11 +45,27 @@ export default function About() {
           </PrimaryContentTextInnerContainer>
         </PrimaryContentTextContainer>
       </PrimaryContentContainer>
-      <QouteContainer>
-        <Quote1 style={{marginBottom: '1.6rem'}}>"Simplicity is the ultimate sophistication."</Quote1>
+      <QuoteContainer>
+        <Quote1 style={{marginBottom: '1.6rem'}}>Simplicity is the ultimate sophistication.</Quote1>
         <Quote2>- Leonardo Da Vinci</Quote2>
-      </QouteContainer>
+      </QuoteContainer>
+      <ContactContainer>
+        <ContactHeadingContainer>
+          <ContactHeading>
+            Contact
+          </ContactHeading>
+        </ContactHeadingContainer>
+        <ContactText>
+          Let's build something rad together! Drop me a <StyledLink href="mailto:chris@chrisfollen.com">line</StyledLink>
+        </ContactText>
+        {/* <LinksContainer>
+        <a href="mailto:chris@chrisfollen.com" target="_blank" rel="noreferrer"><ExternalLink src="https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/misc%2Femail_black.png?alt=media&token=91ce6438-26d6-471d-9ee0-8075563cd825" alt='Email icon'/></a>
+                <a href="https://www.linkedin.com/in/chrisfollen/" target="_blank" rel="noreferrer"><ExternalLink src="https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/misc%2Flinkedin_black.png?alt=media&token=f5bd7b11-268e-462b-8b43-7af471055857" alt='LinkedIn logo'/></a>
+                <a href="https://github.com/chrisfollen" target="_blank" rel="noreferrer"><ExternalLink src="https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/misc%2Fgithub_black.png?alt=media&token=7445978f-5ae8-4d15-b52a-1a25b03b5ff4" alt='GitHub logo' /></a>
+        </LinksContainer> */}
+      </ContactContainer>
     </InnerPageContainer>
+    <Footer/>
   </OuterPageContainer>
   );
 }

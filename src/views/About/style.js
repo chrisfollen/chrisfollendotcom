@@ -43,7 +43,7 @@ const slideInLeft = keyframes `
   }
 
   to {
-    transform: rotate(45deg) translateY(.8rem) translateX(.8rem)
+    transform: rotate(45deg) translateY(.7rem) translateX(.7rem)
   }
 `
 
@@ -79,20 +79,20 @@ export const HeroTextBase = styled(Heading2)`
 `
 
 export const HeroText1 = styled(HeroTextBase)`
-    animation: ${slideInDown} 3s ease 
+    animation: ${slideInDown} 2s ease 
     };
     animation-fill-mode: forwards;
 `
 
 export const HeroText2 = styled(HeroTextBase)`
-    animation: ${slideInDown} 3s ease 2s
+    animation: ${slideInDown} 2s ease 1s
     };
     animation-fill-mode: forwards;
 `
 
 export const HeroTextR = styled.div`
     display: inline-block;    
-    animation: ${rotateLetter} 1s ease-in 5s
+    animation: ${rotateLetter} 1s ease-in 3s
     };
     animation-fill-mode: forwards;
 `
@@ -104,7 +104,6 @@ export const PrimaryContentContainer = styled.div`
     height: auto;
     min-height: 500px;
     margin: auto;
-    margin-bottom: 100px;
     @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
         flex-direction: column;
     }
@@ -117,7 +116,7 @@ export const CarouselContainer = styled.div`
     opacity: 0;
     align-items: center;
     justify-content: center;
-    animation: ${slideInLeft} 2s ease 6s
+    animation: ${slideInLeft} 1s ease 4s
     };
     animation-fill-mode: forwards;
     @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
@@ -132,7 +131,7 @@ export const PrimaryContentTextContainer = styled.div`
     flex-direction: column;
     justify-content: space-around;
     opacity: 0;
-    animation: ${slideInRight} 2s ease 7s
+    animation: ${slideInRight} 1s ease 5s
     };
     animation-fill-mode: forwards;
     @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
@@ -164,15 +163,79 @@ export const PrimaryContentBodyText = styled(Body1)`
     }
 `
 
-export const QouteContainer = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 18rem;
-    margin-bottom: 18rem;
+export const QuoteContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30rem;
+  text-align: center;
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+      margin-top: 10rem;
+  }
 `
+
+export const ContactContainer = styled.div`
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30rem;
+  margin-bottom: 15rem;
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+      margin-top: 10rem;
+      margin-bottom: 6rem;
+  }
+`
+
+export const ContactHeadingContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`
+
+export const ContactHeading = styled(Heading2)`
+  letter-spacing: 0.5rem;
+  margin-bottom: 200px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    margin-bottom: 100px;
+  }
+`
+
+export const ContactText = styled(Heading4)`
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  line-height: 3rem;
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    letter-spacing: 0.1rem;
+  }
+`
+
+export const StyledLink = styled.a`
+  color: ${({ theme }) => theme.palette.green}
+`
+
+// export const LinksContainer = styled.div`
+//   width: 60%;
+//   margin: auto;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: space-around;
+//   margin-top: 10rem;
+//   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+//       margin-top: 4rem;
+//   }
+// `
+
+// export const ExternalLink = styled.img`
+//     width: 40px;
+//     height: 40px;
+//     padding: 40px;
+// `
+
 
 
 

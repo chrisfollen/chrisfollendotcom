@@ -74,20 +74,25 @@ export const Body1 = styled.p`
     }
 `
 
+export const Body2 = styled.p`
+    ${base};
+    font-size: 0.8rem;
+`
+
 export const Quote1 = styled.p`
     ${base};
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     text-transform: uppercase;
     letter-spacing: 0.3rem;
     @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-        font-size: 1.2rem;
+        font-size: 1rem;
         letter-spacing: 0.2rem;
     }
 `
 
 export const Quote2 = styled.p`
     ${base};
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {

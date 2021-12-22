@@ -47,10 +47,6 @@ export const CloseButtonContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-
-    }
 `
 
 export const InternalLinksContainer = styled.div`
@@ -58,10 +54,6 @@ export const InternalLinksContainer = styled.div`
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 5rem;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-
-    }
 `
 
 export const ExternalLinksContainer = styled.div`
@@ -125,19 +117,11 @@ opacity: ${({ menuItemsVisable }) => menuItemsVisable ? 1 : 0};
 export const ExternalLink = styled.img`
     width: 30px;
     height: 30px;
-    padding: 12px;
+    padding: 18px;
     opacity: ${({ menuItemsVisable }) => menuItemsVisable ? 1 : 0};
     animation: ${({ menuActive }) => menuActive &&
     css`
         ${slideInUp} .8s ease-in .9s
     `};
     animation-fill-mode: forwards;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-
-    }
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-
-    }
 `
