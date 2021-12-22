@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import { Body1, Heading2, Heading4 } from '../../Typography/style'
+import { Body1, Heading2, Heading3, Heading4 } from '../../Typography/style'
 
 const slideInLeft = keyframes `
     from {
@@ -163,14 +163,22 @@ export const PrimaryContentBodyText = styled(Body1)`
     }
 `
 
-export const QuoteContainer = styled.div`
+export const QuoteOuterWrapper = styled.div`
   width: 100%;
+  background-color: ${({ theme }) => theme.palette.grey};
+`
+
+export const QuoteContainer = styled.div`
+  width: 90%;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  margin: auto;
   margin-top: 30rem;
   text-align: center;
+  padding: 2rem;
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
       margin-top: 10rem;
   }
@@ -196,11 +204,11 @@ export const ContactHeadingContainer = styled.div`
   flex-direction: column;
 `
 
-export const ContactHeading = styled(Heading2)`
+export const ContactHeading = styled(Heading3)`
   letter-spacing: 0.5rem;
-  margin-bottom: 200px;
+  margin-bottom: 8rem;
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    margin-bottom: 100px;
+    margin-bottom: 4rem;
   }
 `
 
@@ -217,24 +225,29 @@ export const StyledLink = styled.a`
   color: ${({ theme }) => theme.palette.green}
 `
 
-// export const LinksContainer = styled.div`
-//   width: 60%;
-//   margin: auto;
-//   display: flex;
-//   flex-direction: row;
-//   align-items: center;
-//   justify-content: space-around;
-//   margin-top: 10rem;
-//   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-//       margin-top: 4rem;
-//   }
-// `
+export const LinksContainer = styled.div`
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  margin-top: 8rem;
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+      margin-top: 4rem;
+  }
+`
 
-// export const ExternalLink = styled.img`
-//     width: 40px;
-//     height: 40px;
-//     padding: 40px;
-// `
+export const ExternalLink = styled.img`
+    width: 40px;
+    height: 40px;
+    margin-right: 40px;
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+      width: 30px;
+      height: 30px;
+      margin-right: 30px;
+  }
+`
 
 
 
