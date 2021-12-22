@@ -176,9 +176,9 @@ export const QuoteContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   margin: auto;
-  margin-top: 30rem;
+  margin-top: 20rem;
   text-align: center;
-  padding: 2rem;
+  padding: 6rem;
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
       margin-top: 10rem;
   }
@@ -190,7 +190,7 @@ export const ContactContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30rem;
+  margin-top: 20rem;
   margin-bottom: 15rem;
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
       margin-top: 10rem;
