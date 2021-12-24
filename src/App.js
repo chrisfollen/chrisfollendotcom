@@ -78,7 +78,7 @@ function App() {
                     <Route path="/dev" element={<Dev/>} />
                     <Route path="/photo" exact element={<Photo/>} />
                     <Route path="/about" exact element={<About/>} />
-                    <Route element={<NotFound/>} />
+                    <Route path='*' element={<NotFound/>} />
                 </Routes>
                 </div>
             </Router>

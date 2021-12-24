@@ -20,7 +20,7 @@ export const Heading1 = styled.h1`
     }
 
     @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-        font-size: 1.6rem;
+        font-size: 2.0rem;
     }
 `
 
