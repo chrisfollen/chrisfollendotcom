@@ -11,5 +11,6 @@ export const FooterContainer = styled.div`
 
 export const FooterText = styled(Body2)`
     color: ${({ theme }) => theme.palette.darkgrey};
-    letter-spacing: 0.2rem
+    letter-spacing: 0.15rem;
+    text-align: center;
 `

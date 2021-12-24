@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const QuoteOuterWrapper = styled.div`
   width: 100%;
+  margin: auto;
   margin-top: 160px;
   background-color: ${({ theme }) => theme.palette.grey};
 `
@@ -12,11 +13,14 @@ export const QuoteContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   margin: auto;
   text-align: center;
-  padding: 6rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-      padding: 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 `
 

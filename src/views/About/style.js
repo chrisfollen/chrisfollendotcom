@@ -166,6 +166,7 @@ export const PrimaryContentBodyText = styled(Body1)`
 export const QuoteOuterWrapper = styled.div`
   width: 100%;
   background-color: ${({ theme }) => theme.palette.grey};
+  margin: auto;
 `
 
 export const QuoteContainer = styled.div`
@@ -178,9 +179,12 @@ export const QuoteContainer = styled.div`
   margin: auto;
   margin-top: 20rem;
   text-align: center;
-  padding: 6rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
       margin-top: 10rem;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
   }
 `
 
