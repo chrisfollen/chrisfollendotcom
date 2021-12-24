@@ -12,12 +12,11 @@ export const QuoteContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
   margin: auto;
   text-align: center;
   padding: 6rem;
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-      margin-top: 10rem;
+      padding: 1.5rem;
   }
 `
 
@@ -35,13 +34,30 @@ export const GalleryContainer = styled.div`
     }
 `
 
-export const GalleryColumn = styled.div`
+export const GalleryColumnBase = styled.div`
     width: 50%;
     display: flex;
     flex-direction: column;
     margin: 0;
     border: 0;
     padding: 0;
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        width: 100%;
+    }
+`
+
+export const GalleryColumnLeft = styled(GalleryColumnBase)`
+    padding-right: 0.4rem;
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        padding-right: 0;
+    }
+`
+
+export const GalleryColumnRight = styled(GalleryColumnBase)`
+    padding-left: 0.4rem;
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        padding-left: 0;
+    }
 `
 
 export const GalleryPhoto = styled.img`

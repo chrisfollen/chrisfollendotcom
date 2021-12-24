@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { OuterPageContainer } from '../../components/OuterPageContainer/style';
 import { Quote1, Quote2 } from '../../Typography/style';
 import PhotoModal from './components/PhotoModal';
-import { GalleryColumn, GalleryContainer, QuoteContainer, QuoteOuterWrapper, GalleryPhoto } from './style';
+import { GalleryColumnLeft, GalleryColumnRight, GalleryContainer, QuoteContainer, QuoteOuterWrapper, GalleryPhoto } from './style';
 
 export default function Photo() {
 
@@ -38,7 +38,7 @@ export default function Photo() {
           </QuoteContainer>
         </QuoteOuterWrapper>
         <GalleryContainer>
-          <GalleryColumn style={{paddingRight: '.4rem'}}>
+          <GalleryColumnLeft>
             <GalleryPhoto className='clickable' onClick={handlePhotoClick} src='https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/portfolio%2Fportfolio-1.jpg?alt=media&token=1297057b-b625-4b38-a97a-d5c7d7f6f3b8' alt='rad'/>
             <GalleryPhoto className='clickable' onClick={handlePhotoClick} src='https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/portfolio%2Fportfolio-3.jpg?alt=media&token=1297057b-b625-4b38-a97a-d5c7d7f6f3b8' alt='rad'/>
             <GalleryPhoto className='clickable' onClick={handlePhotoClick} src='https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/portfolio%2Fportfolio-5.jpg?alt=media&token=1297057b-b625-4b38-a97a-d5c7d7f6f3b8' alt='rad'/>
@@ -79,8 +79,8 @@ export default function Photo() {
             <GalleryPhoto className='clickable' onClick={handlePhotoClick} src='https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/portfolio%2Fportfolio-75.jpg?alt=media&token=1297057b-b625-4b38-a97a-d5c7d7f6f3b8' alt='rad'/>
             <GalleryPhoto className='clickable' onClick={handlePhotoClick} src='https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/portfolio%2Fportfolio-77.jpg?alt=media&token=1297057b-b625-4b38-a97a-d5c7d7f6f3b8' alt='rad'/>
             <GalleryPhoto className='clickable' onClick={handlePhotoClick} src='https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/portfolio%2Fportfolio-81.jpg?alt=media&token=1297057b-b625-4b38-a97a-d5c7d7f6f3b8' alt='rad'/>
-          </GalleryColumn>
-          <GalleryColumn style={{paddingLeft: '.4rem'}}>
+          </GalleryColumnLeft>
+          <GalleryColumnRight>
             <GalleryPhoto className='clickable' onClick={handlePhotoClick} src='https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/portfolio%2Fportfolio-2.jpg?alt=media&token=1297057b-b625-4b38-a97a-d5c7d7f6f3b8' alt='rad'/>
             <GalleryPhoto className='clickable' onClick={handlePhotoClick} src='https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/portfolio%2Fportfolio-4.jpg?alt=media&token=1297057b-b625-4b38-a97a-d5c7d7f6f3b8' alt='rad'/>
             <GalleryPhoto className='clickable' onClick={handlePhotoClick} src='https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/portfolio%2Fportfolio-6.jpg?alt=media&token=1297057b-b625-4b38-a97a-d5c7d7f6f3b8' alt='rad'/>
@@ -122,7 +122,7 @@ export default function Photo() {
             <GalleryPhoto className='clickable' onClick={handlePhotoClick} src='https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/portfolio%2Fportfolio-78.jpg?alt=media&token=1297057b-b625-4b38-a97a-d5c7d7f6f3b8' alt='rad'/>
             <GalleryPhoto className='clickable' onClick={handlePhotoClick} src='https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/portfolio%2Fportfolio-79.jpg?alt=media&token=1297057b-b625-4b38-a97a-d5c7d7f6f3b8' alt='rad'/>
             <GalleryPhoto className='clickable' onClick={handlePhotoClick} src='https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/portfolio%2Fportfolio-80.jpg?alt=media&token=1297057b-b625-4b38-a97a-d5c7d7f6f3b8' alt='rad'/>
-          </GalleryColumn>
+          </GalleryColumnRight>
         </GalleryContainer>
       </OuterPageContainer>
   );
