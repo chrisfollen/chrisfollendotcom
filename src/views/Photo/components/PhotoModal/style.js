@@ -1,16 +1,4 @@
-import styled, { keyframes } from 'styled-components'
-
-const slideInDown = keyframes `
-from {
-  top: -100%;
-  opacity: 0;
-}
-
-to {
-  top: 0;
-  opacity: 1;
-}
-`
+import styled from 'styled-components'
 
 export const PhotoModalContainer = styled.div`
     display: flex; 
@@ -22,14 +10,13 @@ export const PhotoModalContainer = styled.div`
     position: fixed;
     z-index: 4000;
     left: 0;
-    opacity: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     background-color: ${({ theme }) => theme.palette.white};
     overflow: auto;
-    animation: ${slideInDown} .4s ease
-    };
-    animation-fill-mode: forwards;
+    transition: transform .4s ease;
+    transform: ${({ modalActive }) => modalActive ? 'translateY(0)' : 'translateY(-100%)'};
 `
 
 export const CloseButtonWrapper = styled.div`

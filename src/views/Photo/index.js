@@ -11,7 +11,7 @@ export default function Photo() {
  }, []);
 
  const [modalActive, setModalActive] = useState(false)
- const [currentPhoto, setCurrentPhoto] = useState('')
+ const [currentPhoto, setCurrentPhoto] = useState('https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/portfolio%2Fportfolio-1.jpg?alt=media&token=1297057b-b625-4b38-a97a-d5c7d7f6f3b8')
 
  const togglePhotoModal = () => {
      if (modalActive) {
@@ -29,7 +29,7 @@ export default function Photo() {
 
   return (
       <OuterPageContainer>
-      {modalActive && <PhotoModal togglePhotoModal={togglePhotoModal} currentPhoto={currentPhoto} modalActive={modalActive}/>}
+      <PhotoModal togglePhotoModal={togglePhotoModal} currentPhoto={currentPhoto} modalActive={modalActive}/>
         <QuoteOuterWrapper>
           <QuoteContainer>
             <Quote1>What is this life if, full of care,</Quote1>
