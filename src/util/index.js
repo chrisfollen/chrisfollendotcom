@@ -9,14 +9,14 @@ export const hideCursor = () => {
   }
 
   export const addClickEventListeners = (setLinkHover) => {
-    document.querySelectorAll('a, button, Link').forEach((link) => {
+    document.querySelectorAll('a, button, Link, .clickable').forEach((link) => {
       link.addEventListener('mouseover', () => setLinkHover(true))
       link.addEventListener('mouseout', () => setLinkHover(false))
     })
   }
 
   export const removeClickEventListeners = (setLinkHover) => {
-    document.querySelectorAll('a, button, Link').forEach((link) => {
+    document.querySelectorAll('a, button, Link, .clickable').forEach((link) => {
       link.removeEventListener('mouseover', () => setLinkHover(true))
       link.removeEventListener('mouseout', () => setLinkHover(false))
     })

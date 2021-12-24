@@ -81,18 +81,20 @@ export const Body2 = styled.p`
 
 export const Quote1 = styled.p`
     ${base};
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     text-transform: uppercase;
     letter-spacing: 0.3rem;
+    line-height: 1.8rem;
     @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
         font-size: 1rem;
         letter-spacing: 0.2rem;
+        line-height: 1.6rem;
     }
 `
 
 export const Quote2 = styled.p`
     ${base};
-    font-size: 1rem;
+    font-size: .9rem;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {

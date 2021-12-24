@@ -21,10 +21,6 @@ export default function Menu({ toggleMenu, menuActive, handlePageLoad }) {
         }
       }, [menuActive])
 
-      console.log('menu active:', menuActive)
-
-
-
     return (
         <MenuContainer menuActive={menuActive}>
             <CloseButtonContainer>

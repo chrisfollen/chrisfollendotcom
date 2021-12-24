@@ -29,7 +29,7 @@ export default function About() {
               Stoicism. Bikes. Woodworking.
             </PrimaryContentHeadingText>
             <PrimaryContentHeadingText>
-            Architecture. Tattoos. Rioja.
+            Architecture. Guitar. Rioja.
             </PrimaryContentHeadingText>
           </PrimaryContentTextInnerContainer>
           <PrimaryContentTextInnerContainer>
