@@ -189,7 +189,6 @@ export const ContactContainer = styled.div`
   margin: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-top: 20rem;
   margin-bottom: 15rem;
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
