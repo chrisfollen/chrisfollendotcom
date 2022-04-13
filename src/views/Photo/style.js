@@ -32,6 +32,7 @@ export const GalleryContainer = styled.div`
     margin: auto;
     overflow: auto;
     margin-top: 100px;
+    margin-bottom: 100px;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
         flex-direction: column;

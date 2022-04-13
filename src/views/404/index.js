@@ -1,17 +1,22 @@
 import React, { useEffect } from 'react'
 import { HeroText, StyledText, NotFoundContainer, StyledLink, InnerNotFoundPageContainer } from './style'
+import { getCopy } from './copy';
 
-export default function NotFound() {
+export default function NotFound({ handlePageLoad }) {
 
-  useEffect(() => {
-    document.title = "404 - CHRIS FOLLEN"
+useEffect(() => {
+    document.title = getCopy.pageTitle
  }, []);
+
+ const handleLinkClick = () => {
+  handlePageLoad();
+}
 
   return (
     <NotFoundContainer>
       <InnerNotFoundPageContainer>
-        <HeroText>4L04A</HeroText>
-        <StyledText>It looks like you’ve arrived in the middle of nowhere.  It’s usually a good place to be, but in this case, it isn’t. Best head back <StyledLink to="/">home.</StyledLink> </StyledText>
+        <HeroText>{getCopy.header}</HeroText>
+        <StyledText>{getCopy.bodyCopy} <StyledLink onClick={handleLinkClick} to="/">{getCopy.bodyLinkText}</StyledLink> </StyledText>
       </InnerNotFoundPageContainer>
     </NotFoundContainer>
   );

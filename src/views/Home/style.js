@@ -9,10 +9,6 @@ const slideIn = keyframes `
       opacity: 0;
     }
   
-    65% {
-      font-size: 900%;
-    }
-  
     to {
       margin-left: 0%;
       width: 100%;
@@ -25,10 +21,6 @@ const slideIn = keyframes `
       margin-left: 100%;
       width: 300%;
       opacity: 0;
-    }
-  
-    65% {
-      font-size: 500%;
     }
   
     to {

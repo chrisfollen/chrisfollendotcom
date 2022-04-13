@@ -5,19 +5,20 @@ import { CarouselContainer, HeroText1, HeroText2, HeroTextContainer, HeroTextR, 
 import PhotoCarousel from './components/PhotoCarosel';
 import { Quote1, Quote2 } from '../../Typography/style';
 import Footer from '../../components/Footer';
+import { getCopy } from './copy';
 
 export default function About() {
 
   useEffect(() => {
-    document.title = "About - CHRIS FOLLEN"
+    document.title = getCopy.pageTitle
  }, []);
 
   return (
     <OuterPageContainer>
     <InnerPageContainer>
       <HeroTextContainer>
-        <HeroText1>Hi there, I'm Chris!</HeroText1>
-        <HeroText2>Developer & photographe<HeroTextR>r</HeroTextR></HeroText2>
+        <HeroText1>{getCopy.heroText1}</HeroText1>
+        <HeroText2>{getCopy.heroText2}<HeroTextR>{getCopy.heroTextR}</HeroTextR></HeroText2>
       </HeroTextContainer>
       <PrimaryContentContainer>
         <CarouselContainer>
@@ -26,21 +27,12 @@ export default function About() {
         <PrimaryContentTextContainer>
           <PrimaryContentTextInnerContainer>
             <PrimaryContentHeadingText>
-              Stoicism. Bikes. Woodworking.
-            </PrimaryContentHeadingText>
-            <PrimaryContentHeadingText>
-            Architecture. Guitar. Rioja.
+              {getCopy.primaryContentHeading}
             </PrimaryContentHeadingText>
           </PrimaryContentTextInnerContainer>
           <PrimaryContentTextInnerContainer>
             <PrimaryContentBodyText>
-              I’m so glad you found your way to my website, and I hope my work puts a smile on your face.
-            </PrimaryContentBodyText>
-            <PrimaryContentBodyText>
-              I'm a frontend developer and freelance photographer based in Boulder, Colorado. 
-              I like thinking, creating, problem solving, and learning. I’m passionate 
-              about everything I do, and am particularly intrigued by work that marries an aesthetic component 
-              with a technical one.
+            {getCopy.primaryBody}
             </PrimaryContentBodyText>
           </PrimaryContentTextInnerContainer>
         </PrimaryContentTextContainer>
@@ -48,19 +40,19 @@ export default function About() {
     </InnerPageContainer>
     <QuoteOuterWrapper>
       <QuoteContainer>
-        <Quote1 style={{marginBottom: '1.6rem'}}>Simplicity is the ultimate sophistication.</Quote1>
-        <Quote2>- Leonardo Da Vinci</Quote2>
+        <Quote1 style={{marginBottom: '1.6rem'}}>{getCopy.quote}</Quote1>
+        <Quote2>{getCopy.quoteAuthor}</Quote2>
       </QuoteContainer>
     </QuoteOuterWrapper>
     <InnerPageContainer style={{marginTop: "0"}}>
       <ContactContainer>
         <ContactHeadingContainer>
           <ContactHeading>
-            Contact
+            {getCopy.contactHeading}
           </ContactHeading>
         </ContactHeadingContainer>
         <ContactText>
-          Let's build something rad together! Drop me a <StyledLink href="mailto:chris@chrisfollen.com">line</StyledLink>
+          {getCopy.contactText} <StyledLink href="mailto:chris@chrisfollen.com">{getCopy.contactLinkText}</StyledLink>
         </ContactText>
         <LinksContainer>
         <a href="mailto:chris@chrisfollen.com" target="_blank" rel="noreferrer"><ExternalLink src="https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/misc%2Femail_black.png?alt=media&token=91ce6438-26d6-471d-9ee0-8075563cd825" alt='Email icon'/></a>

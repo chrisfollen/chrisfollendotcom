@@ -146,7 +146,7 @@ export const PrimaryContentTextInnerContainer = styled.div`
 
 export const PrimaryContentHeadingText = styled(Heading4)`
     color: ${({ theme }) => theme.palette.green};
-    line-height: 3rem;
+    line-height: 3.4rem;
     letter-spacing: 0.2rem;
     @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
         line-height: 2rem;
