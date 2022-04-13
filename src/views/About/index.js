@@ -6,6 +6,7 @@ import PhotoCarousel from './components/PhotoCarosel';
 import { Quote1, Quote2 } from '../../Typography/style';
 import Footer from '../../components/Footer';
 import { getCopy } from './copy';
+import { EMAIL_ICON_SRC, GITHUB_ICON_SRC, LINKED_IN_ICON_SRC } from '../../constants';
 
 export default function About() {
 
@@ -55,9 +56,9 @@ export default function About() {
           {getCopy.contactText} <StyledLink href="mailto:chris@chrisfollen.com">{getCopy.contactLinkText}</StyledLink>
         </ContactText>
         <LinksContainer>
-        <a href="mailto:chris@chrisfollen.com" target="_blank" rel="noreferrer"><ExternalLink src="https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/misc%2Femail_black.png?alt=media&token=91ce6438-26d6-471d-9ee0-8075563cd825" alt='Email icon'/></a>
-                <a href="https://www.linkedin.com/in/chrisfollen/" target="_blank" rel="noreferrer"><ExternalLink src="https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/misc%2Flinkedin_black.png?alt=media&token=f5bd7b11-268e-462b-8b43-7af471055857" alt='LinkedIn logo'/></a>
-                <a href="https://github.com/chrisfollen" target="_blank" rel="noreferrer"><ExternalLink src="https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/misc%2Fgithub_black.png?alt=media&token=7445978f-5ae8-4d15-b52a-1a25b03b5ff4" alt='GitHub logo' /></a>
+        <a href="mailto:chris@chrisfollen.com" target="_blank" rel="noreferrer"><ExternalLink src={EMAIL_ICON_SRC} alt='Email icon'/></a>
+                <a href="https://www.linkedin.com/in/chrisfollen/" target="_blank" rel="noreferrer"><ExternalLink src={LINKED_IN_ICON_SRC} alt='LinkedIn logo'/></a>
+                <a href="https://github.com/chrisfollen" target="_blank" rel="noreferrer"><ExternalLink src={GITHUB_ICON_SRC} alt='GitHub logo' /></a>
         </LinksContainer>
       </ContactContainer>
     </InnerPageContainer>

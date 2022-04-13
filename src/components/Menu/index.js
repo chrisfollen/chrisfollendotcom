@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { Heading3 } from '../../Typography/style'
 import { MenuContainer, CloseButtonContainer, InternalLinksContainer, ExternalLinksContainer, CloseButton, ExternalLink, InternalLink1, InternalLink2, InternalLink3 } from './style'
+import { EMAIL_ICON_SRC, LINKED_IN_ICON_SRC, GITHUB_ICON_SRC } from '../../constants'
 
 export default function Menu({ toggleMenu, menuActive, handlePageLoad }) {
 
@@ -33,9 +34,9 @@ export default function Menu({ toggleMenu, menuActive, handlePageLoad }) {
             </InternalLinksContainer>
 
             <ExternalLinksContainer>
-                <a href="mailto:chris@chrisfollen.com" target="_blank" rel="noreferrer"><ExternalLink menuItemsVisable={menuItemsVisable} menuActive={menuActive}  src="https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/misc%2Femail_black.png?alt=media&token=91ce6438-26d6-471d-9ee0-8075563cd825" alt='Email icon'/></a>
-                <a href="https://www.linkedin.com/in/chrisfollen/" target="_blank" rel="noreferrer"><ExternalLink menuItemsVisable={menuItemsVisable} menuActive={menuActive} src="https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/misc%2Flinkedin_black.png?alt=media&token=f5bd7b11-268e-462b-8b43-7af471055857" alt='LinkedIn logo'/></a>
-                <a href="https://github.com/chrisfollen" target="_blank" rel="noreferrer"><ExternalLink menuItemsVisable={menuItemsVisable} menuActive={menuActive} src="https://firebasestorage.googleapis.com/v0/b/chrisfollendotcom.appspot.com/o/misc%2Fgithub_black.png?alt=media&token=7445978f-5ae8-4d15-b52a-1a25b03b5ff4" alt='GitHub logo' /></a>
+                <a href="mailto:chris@chrisfollen.com" target="_blank" rel="noreferrer"><ExternalLink menuItemsVisable={menuItemsVisable} menuActive={menuActive}  src={EMAIL_ICON_SRC} alt='Email icon'/></a>
+                <a href="https://www.linkedin.com/in/chrisfollen/" target="_blank" rel="noreferrer"><ExternalLink menuItemsVisable={menuItemsVisable} menuActive={menuActive} src={LINKED_IN_ICON_SRC} alt='LinkedIn logo'/></a>
+                <a href="https://github.com/chrisfollen" target="_blank" rel="noreferrer"><ExternalLink menuItemsVisable={menuItemsVisable} menuActive={menuActive} src={GITHUB_ICON_SRC} alt='GitHub logo' /></a>
             </ExternalLinksContainer>
         </MenuContainer>
     )
