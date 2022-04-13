@@ -1,7 +1,6 @@
 export const getCopy = {
     pageTitle: 'Photo - CHRIS FOLLEN',
-    quoteFirstLine : 'What is this life if, full of care,',
-    quoteSecondLine: 'We have no time to stand and stare.',
+    quote: 'What is this life if, full of care, \n we have no time to stand and stare.',
     quoteAuthor: '- W.H. Davies'
 }
 

@@ -34,8 +34,7 @@ export default function Photo() {
       <PhotoModal togglePhotoModal={togglePhotoModal} currentPhoto={currentPhoto} modalActive={modalActive}/>
         <QuoteOuterWrapper>
           <QuoteContainer>
-            <Quote1>{getCopy.quoteFirstLine}</Quote1>
-            <Quote1 style={{marginBottom: '1.6rem'}}>{getCopy.quoteSecondLine}</Quote1>
+            <Quote1 style={{marginBottom: '1.6rem'}}>{getCopy.quote}</Quote1>
             <Quote2>{getCopy.quoteAuthor}</Quote2>
           </QuoteContainer>
         </QuoteOuterWrapper>
